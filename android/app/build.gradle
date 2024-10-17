@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.advisoryapp_assigments"
+    namespace = "advisoryapp"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
