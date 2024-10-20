@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:shared_preferences_manager/shared_preferences_manager.dart';
 import 'models/user.dart';
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+import 'package:flutter/material.dart';
 
 class AuthenticationRepository {
   final firebase_auth.FirebaseAuth _auth = firebase_auth.FirebaseAuth.instance;
@@ -11,11 +12,15 @@ class AuthenticationRepository {
       SharedPreferencesManager();
   final dio = Dio();
 
-  Stream<User> retrieveCurrentUser() {
-    return Stream.fromFuture(_sharedPreferencesManager
-        .getString('token')
-        .then((token) => User(token: token)));
+  Stream<User> retrieveCurrentUser() async* {
+  final token = await _sharedPreferencesManager.getString('token');
+  debugPrint("token: $token");
+  if (token == null) {
+    yield User.empty;
   }
+  yield User(token: token);
+}
+
 
   User get currentUser {
     final getSharedPreferences = _sharedPreferencesManager.getString('token');

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "568064410438",
+    "project_id": "advisoryapp-80a38",
+    "storage_bucket": "advisoryapp-80a38.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:568064410438:android:8bee585a85eeec7c6b5b47",
+        "android_client_info": {
+          "package_name": "com.example.advisoryapp_assigments"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDITWz06u1w9ohiiNHw7nSPaPLUuRv_W4c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

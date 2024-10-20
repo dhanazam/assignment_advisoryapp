@@ -6,6 +6,8 @@ environment:
   sdk: '>=2.18.0 <3.0.0'
 
 dependencies:
+  flutter:
+    sdk: flutter
   firebase_auth: ^5.1.2
   equatable: ^2.0.5
   flutter_facebook_auth: '^3.5.0'

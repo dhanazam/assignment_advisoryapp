@@ -20,7 +20,7 @@ GoRouter goRouter(AppBloc appBloc) {
     ],
     redirect: (BuildContext context, GoRouterState state) {
       final statusAuthentication = context.read<AppBloc>().state.status;
-
+      debugPrint("statusAuthentication: $statusAuthentication");
       if (statusAuthentication == AppStatus.authenticated) {
         return '/Home';
       } else if (statusAuthentication == AppStatus.unauthenticated) {
@@ -29,6 +29,7 @@ GoRouter goRouter(AppBloc appBloc) {
       return null;
     },
     refreshListenable: GoRouterRefreshStream(appBloc.stream),
+    initialLocation: '/Login',
   );
 }
 
